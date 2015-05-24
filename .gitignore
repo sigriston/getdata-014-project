@@ -1,0 +1,5 @@
+data
+UCI_HAR_Dataset.zip
+.R*
+tidy_dataset_full.txt
+tidy_dataset_summarized.txt
