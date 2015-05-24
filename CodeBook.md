@@ -62,7 +62,7 @@ The layout of the columns is as following, on both files:
 
 The measured variables, or **features** (as they are called in the raw dataset's documentation), have a very particular naming scheme in the tidy dataset, illustrated by the following diagram:
 
-![Feature Naming Scheme](NamingScheme.svg)
+![Feature Naming Scheme](https://cdn.rawgit.com/sigriston/getdata-014-project/master/NamingScheme.svg)
 
 Here's what each of the blocks of the diagram mean:
 
