@@ -20,9 +20,22 @@ run_analysis <- function(base_path = "data") {
   ##             Defaults to "data" which is the directory where download.R
   ##             will place it.
   ##
-
-  # files are inside a "UCI HAR Dataset" directory, append that to base_path
-  base_path <- file.path(base_path, "UCI HAR Dataset")
+  
+  # files are inside a "UCI HAR Dataset" directory, put that in base_path
+  # prefer the "UCI HAR Dataset" directly in the working directory,
+  # otherwise look inside the default "data" directory used by download.R
+  if (dir.exists("UCI HAR Dataset")) {
+    base_path <- "UCI HAR Dataset"
+  } else {
+    base_path <- file.path(base_path, "UCI HAR Dataset")
+  }
+  
+  # check for existence of the dataset files
+  if (!dir.exists(base_path)) {
+    stop("ERROR! Dataset files not found! Please run download.R or make sure ",
+         "the \"UCI HAR Dataset\" directory is inside your current working ",
+         "directory.")
+  }
 
   # read tables with activity labels and feature labels
   activity_labels <- read.table(file.path(base_path, "activity_labels.txt"),
